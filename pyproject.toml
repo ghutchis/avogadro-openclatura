@@ -1,0 +1,35 @@
+[project]
+name = "avogadro-openclatura"
+version = "0.1.0"
+description = "OpenClatura IUPAC-style naming plugin for Avogadro 2"
+authors = [{name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"}]
+license = "BSD-3-Clause"
+requires-python = ">=3.11"
+dependencies = ["openclatura>=0.1.4", "rdkit>=2023.3.2"]
+
+[project.scripts]
+avogadro-openclatura = "avogadro_openclatura:main"
+
+[build-system]
+requires = ["uv_build>=0.10.2,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.avogadro]
+minimum-avogadro-version = "1.103"
+
+[[tool.avogadro.menu-commands]]
+identifier = "name"
+input-format = "sdf"
+menu = "Analyze"
+submenu = "Properties"
+item = "Clatura Name…"
+menu-priorities = [ 900, 300 ]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+avogadro-openclatura = { path = ".", editable = true }
+
+[tool.pixi.tasks]
