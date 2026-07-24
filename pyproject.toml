@@ -1,11 +1,11 @@
 [project]
 name = "avogadro-openclatura"
-version = "0.1.0"
+version = "0.1.1"
 description = "OpenClatura IUPAC-style naming plugin for Avogadro 2"
 authors = [{name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"}]
 license = "BSD-3-Clause"
 requires-python = ">=3.11"
-dependencies = ["openclatura>=0.1.4", "rdkit>=2023.3.2"]
+dependencies = ["openclatura>=0.1.5", "rdkit>=2023.3.2"]
 
 [project.scripts]
 avogadro-openclatura = "avogadro_openclatura:main"
